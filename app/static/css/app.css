@@ -1,0 +1,13 @@
+body {
+    padding-top: 5rem;
+}
+.imageView{
+    display:grid;
+    grid-template-colums:auto auto auto;
+    grid-auto-rows:200px;
+    grid-row-gap: 3px;
+}
+img{
+    width:90%;
+    height:90%;
+}

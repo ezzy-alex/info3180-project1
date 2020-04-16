@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profiles.css') }}" type="text/css" />
+{% endblock %}
+
+{% block main%}
+{% include "flash_messages.html"%}
+
+<div class="profiles-container">
+    <h1 class="title">Profiles</h1>
+    {% for user in users%}
+    <div class="row border-style center profile">
+        
+        <div class="col pro-data">
+            <strong class="profile-name">{{ user.first_name}} {{ user.last_name }}</strong>
+                <div class="profile-info mb-2">
+                    <div class="mb-3">
+                        <div class = "row">Gender: {{ user.gender }} </div>
+                        <div class = "row">Location: {{ user.location }} </div>
+                        <br>
+                        <a href="{{ url_for('profile', userid=user.userid) }}" class="btn btn-success">View Profile</a>
+                    </div>
+</div> 
+    {% endfor %}
+</div>
+{% endblock%}

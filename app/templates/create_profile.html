@@ -1,0 +1,62 @@
+
+{% block css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/create_profile.css') }}" type="text/css" />
+{% endblock %}
+
+{% block main %}
+<h1 class="page-header">Add Profile</h1>
+
+<form action="/profile" method="POST" action="{{ url_for('profile') }}" enctype="multipart/form-data">
+	{{ user.csrf_token }}
+	<div class="form-group">
+		<label for="firstname">{{ user.firstname.label }}</label>
+		{{user.firstname(size=30, class_="form-control input") }}
+	</div>
+	<br>
+	<br>
+	
+	
+	<div class="form-group">
+		<label for="lastname">{{ user.lastname.label }}</label>
+		{{ user.lastname(size=30, class_="form-control input") }}
+	</div>
+	<br>
+	<br>
+	
+	
+	<div class="form-group">
+		<label for="gender">{{ user.gender.label }}</label>
+		{{ user.gender( class_="form-control") }}
+	</div>
+	<br>
+	<br>
+	
+	<div class="form-group">
+		<label for="email">{{ user.email.label }}</label>
+		{{ user.email( placeholder = "eg. example@example.com") }}
+	</div>
+	<br>
+	<br>
+	
+	
+	<div class="containers">
+            {{user.location.label(class="block")}}
+            {{user.location(placeholder="eg. Kingston, Jamaica", class="field col-md-8")}}
+    </div>
+	<br>
+	<br>
+	
+
+	<div class="form-group">
+		<label for="bio">{{ user.bio.label }}</label>
+	<div clas="biotext">{{ user.bio(class_="form-control") }} </div>
+	</div>
+	<br>
+	<br>
+	
+
+	
+     <input type="submit" value="Add Profile" class="btn btn-success"/>
+</form>
+
+{% endblock %}

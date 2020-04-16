@@ -1,0 +1,11 @@
+form{
+    border-radius: 2px;
+    background-color: #f2f2f2;
+   margin-left:400px;
+    width:500px;
+}
+textarea{
+    height:200px;
+    width:400px;
+}
+

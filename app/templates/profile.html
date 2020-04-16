@@ -1,0 +1,25 @@
+{% block css %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/profile.css') }}" type="text/css" />
+{% endblock %}
+
+{% block main %}
+<div class="card center">
+    <div class="row top-info">
+        
+        <div class="col">
+            <span class="row">{{user.firstname}} {{ user.lastname}}</span>
+            <span class="row">{{user.email}}</span>
+            <span class="row">{{user.location}}</span>
+           
+        </div>
+    </div>
+<div class="card-body">
+        <h5 class"card-title">About me</h5>
+        <p calss="card-text">{{user.bio }}</p>
+        <div class="btn-container">
+            <a href="#" class="center col-md-6 btn btn-success">Send messaage</a>
+            <a href="#" class="center col-md-6 btn btn-primary">Follow</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
